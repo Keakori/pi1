@@ -4,7 +4,8 @@ import requests
 import random
 
 with open("tokendbot.txt", "r") as tf:
-    TOKEN = tf.readline()
+    TOKEN_LIST = tf.readline()
+TOKEN = ''.join(map(str.strip, TOKEN_LIST))
 
 Bot = commands.Bot(command_prefix="!!")
 
