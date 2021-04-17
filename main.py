@@ -46,7 +46,7 @@ def weather_response(plase):
     return response.json()
 
 def current_weather(response):
-    city = response["info"]["tzinfo"]["name"].split('/')[-1]
+    city = response['geo_object'] ['locality']['name'].split('/')[-1]
     date = response["now_dt"][:10]
     offset = response["info"]["tzinfo"]["offset"] // 3600
     time = response["now_dt"][11:16]
@@ -82,8 +82,8 @@ async def hello(ctx):
 
 
 @Bot.command(name="current")
-async def current(ctx):
-    response = weather_response("Самара")
+async def current(ctx, plase):
+    response = weather_response(plase)
     message = current_weather(response)
     await ctx.send(message)
 
