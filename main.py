@@ -59,7 +59,7 @@ async def hello(ctx):
     await ctx.send("Привет мой аналоговый друг!")
 
 
-@Bot.comand(name="current")
+@Bot.command(name="current")
 async def current(ctx):
     response = weather_response("Самара")
     message = current_weather(response)
