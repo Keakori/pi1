@@ -13,7 +13,8 @@ WEATHER_API_KEY = "dc972cf9-8a9d-49ca-acca-bdf6f98dc450"
 headers={"X-Yandex-API-Key" : WEATHER_API_KEY}
 
 def weather_response(plase):
-    coords= ("53.213499", "50.240017")
+    #53.213253, 50.239387
+    coords= ("50.239387", "53.213253")
     weather_api_server = "https://api.weather.yandex.ru/v1/forecast?"
     weather_param = {
         "lon" : float(coords[0]),
